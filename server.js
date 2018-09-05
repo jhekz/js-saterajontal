@@ -16,4 +16,4 @@ var express = require('express'),
 
     app.listen(port)
 
-console.log('Sat dimulai melalui : ' +port)
+console.log('Sat dimulai melalui port : ' +port)
