@@ -1,3 +1,5 @@
+const jwt = require('jsonwebtoken')
+
 module.exports = function(app){
     var satMem = require('../controllers/memController')
 
@@ -9,6 +11,8 @@ module.exports = function(app){
     .get(satMem.read_a_mem)
     .put(satMem.update_a_mem)
     .delete(satMem.delete_a_mem)
+    app.route('/login')
+    .post(satMem.login_mem)
 
 
     var satBel = require('../controllers/belController')

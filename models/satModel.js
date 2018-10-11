@@ -2,25 +2,19 @@
 
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
-
+// const bcrypt = require('bcrypt');
 var MemberSchema = new Schema({
     nama:{
         type: String,
         required: 'Nama perlu ditambahkan'
     },
     status:{
-        type: [{
-            type: String,
-            enum: ['mahasiswa', 'siswa', 'bekerja', 'lain']
-        }],
-        default:['lain']
+        type: String,
+        default: 'Belum ditambahkan'
     },
     kota:{
-        type: [{
-            type: String,
-            enum: ['sumbawa', 'luar sumbawa']
-        }],
-        default:['sumbawa']
+        type: String,
+        default: 'Belum ditambahkan'
     },
     username:{
         type: String,
@@ -41,7 +35,7 @@ var MemberSchema = new Schema({
         type:Number,
         default:1
     },
-    exp:{
+    expr:{
         type: Number,
         default:0
     },
@@ -53,6 +47,10 @@ var MemberSchema = new Schema({
 })
 
 var BelajarSchema = new Schema({
+    _id: {
+        type: Number,
+        sequence_value:0
+    },
     nomor: Number,
     judul: String,
     isi: String,
@@ -66,6 +64,10 @@ var BelajarSchema = new Schema({
 })
 
 var KonversiSchema =  new Schema({
+    _id: {
+        type: Number,
+        sequence_value:0
+    },
     latin: String,
     jontal: String,
     kategori:{
@@ -79,13 +81,11 @@ var KonversiSchema =  new Schema({
 })
 
 var TestSchema = new Schema({
-    kategori: {
-        type:[{
-            type: String,
-            enum: ['a', 'b', 'c', 'd']
-        }],
-        default:['a']
+    _id: {
+        type: Number,
+        sequence_value:0
     },
+    kategori: Number,
     nomor: Number,
     judul: String,
     gambar: Buffer,
@@ -95,13 +95,7 @@ var TestSchema = new Schema({
     jwC: String,
     jwD: String,
     kunci: String,
-    level:{
-        type:[{
-            type: Number,
-            enum: [1,2,3]
-        }],
-        default: [1]
-    }
+    level: Number
 })
 
 module.exports = mongoose.model('Mems', MemberSchema)
