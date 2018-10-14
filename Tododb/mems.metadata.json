@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"Tododb.mems"},{"v":2,"unique":true,"key":{"username":1},"name":"username_1","ns":"Tododb.mems","background":true},{"v":2,"unique":true,"key":{"email":1},"name":"email_1","ns":"Tododb.mems","background":true}],"uuid":"bc2200c8ae3f43ae89cbda34eaf8376e"}

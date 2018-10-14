@@ -70,7 +70,7 @@ exports.login_mem = function (req, res) {
                 const token = {
                     email: mem[0].email,
                     nama: mem[0].nama,
-                    password: mem[0].password,
+                    // password: mem[0].password,
                     username: mem[0].username,
                     _id: mem[0]._id,
                     level: mem[0].level,
